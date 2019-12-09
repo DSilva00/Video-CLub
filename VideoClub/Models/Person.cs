@@ -10,6 +10,9 @@ namespace VideoClub.Models
     {
         public int PersonId { get; set; }
 
+        [StringLength(50)]
+        public string UserID { get; set; }
+
         public PersonTypes PersonType { get; set; }
 
         [Required]
@@ -22,16 +25,24 @@ namespace VideoClub.Models
 
         public Genders Gender { get; set; }
 
-        public int ReviewID { get; set; }
+        // Navigation
 
-        public int PaymentID  { get; set; }
+        public virtual Address Address { get; set; }
+
+        public virtual Payment Payment  { get; set; }
+
+        public virtual ICollection<Review> Reviews { get; set; }
+
+        public virtual ICollection<MovieCast> MovieCasts { get; set; }
     }
 
     public enum PersonTypes
     {
         Admin,
         Customer,
-        Creator
+        Creator,
+        Actor,
+        Director
     }
 
     public enum Genders
