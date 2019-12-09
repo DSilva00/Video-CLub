@@ -8,10 +8,16 @@ namespace VideoClub.Models
     public class Review
     {
         public int ReviewId { get; set; }
-        public int MovieID { get; set; }
+
         public string Title{ get; set; }
+
         public string ReviewText{ get; set; }
+
         public int Rating { get; set; }
+
+        //
+
+        public virtual Movie Movie { get; set; }
 
 
     }

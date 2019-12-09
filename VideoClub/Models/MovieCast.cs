@@ -7,6 +7,14 @@ namespace VideoClub.Models
 {
     public class MovieCast
     {
-        string MovieRole { get; set; }
+        public int MovieCastID { get; set; }
+
+        public string MovieRole { get; set; }
+
+        //
+
+        public Person Person { get; set; }
+
+        public Movie Movie { get; set; }
     }
 }
