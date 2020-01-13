@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
+
 
 namespace VideoClub.Models
 {
@@ -11,8 +13,12 @@ namespace VideoClub.Models
 
         public int CardNumber { get; set; }
 
+        [StringLength (10)]
+        [Required]
         public string CardType{ get; set; }
 
+        [StringLength (30)]
+        [Required]
         public string CardName { get; set; }
 
         public int Cvv { get; set; }
@@ -21,7 +27,12 @@ namespace VideoClub.Models
 
         public int ExperingDay { get; set; }
 
+        //Navigation
+      // public virtual Person Person 
+            // É preciso acabar esta parte (Fabio/Rafa)
+            //Fazer a relação com a classe Person 
 
+        //Tentei dar run no programa para ver se compila, e digam alguma coisa sff
 
 
 
